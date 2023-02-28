@@ -1,0 +1,7 @@
+00d909,172.27.0.1,GET,http://localhost/billet,1677620613,,301
+9c5b4e,172.27.0.1,GET,http://localhost/billet/,1677620614,f38973,500
+f38973,172.27.0.1,GET,http://localhost/billet/,1677620614,,500
+8fa64e,172.27.0.1,GET,http://localhost/billet/,1677621480,,200
+64b34f,172.27.0.1,GET,http://localhost/billet/new,1677621531,,200
+321e77,172.27.0.1,GET,http://localhost/billet/,1677621556,,200
+d5f15c,172.27.0.1,GET,http://localhost/billet/,1677622389,,200

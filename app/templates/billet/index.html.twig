@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Billet index{% endblock %}
+
+{% block body %}
+    <h1>Billet index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Passenger_firstname</th>
+                <th>Passenger_lastname</th>
+                <th>Passenger_sexe</th>
+                <th>Company</th>
+                <th>Destination</th>
+                <th>Origin</th>
+                <th>Date_hour_departure</th>
+                <th>Date_hour_arrival</th>
+                <th>Flight_number</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for billet in billets %}
+            <tr>
+                <td>{{ billet.id }}</td>
+                <td>{{ billet.passengerFirstname }}</td>
+                <td>{{ billet.passengerLastname }}</td>
+                <td>{{ billet.passengerSexe }}</td>
+                <td>{{ billet.company }}</td>
+                <td>{{ billet.destination }}</td>
+                <td>{{ billet.origin }}</td>
+                <td>{{ billet.dateHourDeparture ? billet.dateHourDeparture|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ billet.dateHourArrival ? billet.dateHourArrival|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ billet.flightNumber }}</td>
+                <td>
+                    <a href="{{ path('app_billet_show', {'id': billet.id}) }}">show</a>
+                    <a href="{{ path('app_billet_edit', {'id': billet.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_billet_new') }}">Create new</a>
+{% endblock %}
